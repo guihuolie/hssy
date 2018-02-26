@@ -28,7 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/nav_home_image"
-                android:src="@drawable/homepage_header"
+                android:src="@mipmap/homepage_header"
                 android:scaleType="fitXY"
                 android:contentDescription="@null"/>
 

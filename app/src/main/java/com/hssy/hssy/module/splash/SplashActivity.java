@@ -43,11 +43,11 @@ public class SplashActivity extends BaseActivity {
     protected void initView(Bundle savedInstanceState) {
         int i = new Random().nextInt(ConstantsImageUrl.TRANSITION_URLS.length);
         // 先显示默认图
-        mIvDefultPic.setImageDrawable(getResources().getDrawable(R.drawable.img_transition_default));
+        mIvDefultPic.setImageDrawable(getResources().getDrawable(R.mipmap.img_transition_default));
         Glide.with(this)
                 .load(ConstantsImageUrl.TRANSITION_URLS[i])
-                .placeholder(R.drawable.img_transition_default)
-                .error(R.drawable.img_transition_default)
+                .placeholder(R.mipmap.img_transition_default)
+                .error(R.mipmap.img_transition_default)
                 .into(mIvPic);
         new Handler().postDelayed(new Runnable() {
             @Override

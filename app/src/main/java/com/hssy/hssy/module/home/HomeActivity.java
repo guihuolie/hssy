@@ -174,7 +174,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.IHomeView
         mNavView.inflateHeaderView(R.layout.layout_main_nav);
         View headerView = mNavView.getHeaderView(0);
         headerView.findViewById(R.id.ll_nav_homepage).setOnClickListener(mListener);
-        headerView.findViewById(R.id.ll_nav_scan_address).setOnClickListener(mListener);
+//        headerView.findViewById(R.id.ll_nav_scan_address).setOnClickListener(mListener);
         headerView.findViewById(R.id.ll_nav_deedback).setOnClickListener(mListener);
         headerView.findViewById(R.id.ll_nav_login).setOnClickListener(mListener);
         headerView.findViewById(R.id.ll_nav_exit).setOnClickListener(mListener);
@@ -193,9 +193,9 @@ public class HomeActivity extends BaseActivity implements HomeContract.IHomeView
                        case R.id.ll_nav_homepage: // APP说明
                            startActivity(new Intent(HomeActivity.this, NavHomeActivity.class));
                            break;
-                       case R.id.ll_nav_scan_address: // 关于我们
-                           startActivity(new Intent(HomeActivity.this, NavAboutActivity.class));
-                           break;
+//                       case R.id.ll_nav_scan_address: // 关于我们
+//                           startActivity(new Intent(HomeActivity.this, NavAboutActivity.class));
+//                           break;
                        case R.id.ll_nav_deedback: // 问题反馈
                            startActivity(new Intent(HomeActivity.this, NavDeedBackActivity.class));
                            break;

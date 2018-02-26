@@ -8,7 +8,7 @@
     <RelativeLayout
         android:id="@+id/nav_head_layout"
         android:layout_width="match_parent"
-        android:background="@drawable/homepage_header"
+        android:background="@mipmap/homepage_header"
         android:layout_height="173dp">
 
         <LinearLayout

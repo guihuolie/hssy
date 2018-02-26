@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\studio_work\hssy\app\app.iml" filepath="C:\studio_work\hssy\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/hssy.iml" filepath="$PROJECT_DIR$/hssy.iml" />
+      <module fileurl="file://C:\studio_work\hssy\hssy.iml" filepath="C:\studio_work\hssy\hssy.iml" />
     </modules>
   </component>
 </project>
