@@ -190,7 +190,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.IHomeView
                 @Override
                 public void run() {
                    switch (v.getId()){
-                       case R.id.ll_nav_homepage: // 项目主页
+                       case R.id.ll_nav_homepage: // APP说明
                            startActivity(new Intent(HomeActivity.this, NavHomeActivity.class));
                            break;
                        case R.id.ll_nav_scan_address: // 关于我们
@@ -204,14 +204,14 @@ public class HomeActivity extends BaseActivity implements HomeContract.IHomeView
                            // http://cli.im/deqr/ 解析二维码
                            // aex01018hzmxqeqmcaffh96
                            if (AlipayZeroSdk.hasInstalledAlipayClient(HomeActivity.this)) {
-                               AlipayZeroSdk.startAlipayClient(HomeActivity.this, "aex01018hzmxqeqmcaffh96");
+                               AlipayZeroSdk.startAlipayClient(HomeActivity.this, "FKX09981RHCGSWKLS0WN3D");
                            } else {
                                Snackbar.make(mToolbar, "谢谢，您没有安装支付宝客户端", Snackbar.LENGTH_LONG).show();
                            }
                            break;
-                       case R.id.ll_nav_login: // 登录github账号
+                       case R.id.ll_nav_login: // 登录账号
                            Intent intent_login = new Intent(HomeActivity.this, WebViewActivity.class);
-                           intent_login.putExtra(WebViewActivity.GANK_TITLE, "登录github");
+                           intent_login.putExtra(WebViewActivity.GANK_TITLE, "登录");
                            intent_login.putExtra(WebViewActivity.GANK_URL, "https://github.com/login");
                            startActivity(intent_login);
                            break;
