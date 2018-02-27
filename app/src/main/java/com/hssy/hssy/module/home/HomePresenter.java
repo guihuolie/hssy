@@ -48,7 +48,7 @@ public class HomePresenter implements HomeContract.IHomePresenter {
     @Override
     public void getBannerData() {
         mSubscription = NetWork.getGankApi()
-                .getCategoryData("福利",5,1)
+                .getCategoryData("福利",1,1)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<CategoryResult>() {
@@ -69,13 +69,15 @@ public class HomePresenter implements HomeContract.IHomePresenter {
                             List<String> imgUrls = new ArrayList<>();
                             for (CategoryResult.ResultsBean result : categoryResult.results) {
                                 if (!result.url.isEmpty()){
-                                    imgUrls.add(result.url);
+//                                    imgUrls.add(result.url);
+                                    imgUrls.add("http://139.196.137.31:8080/examples/hunsha/psb3.jpg");
                                 }
                                 PictureModel model = new PictureModel();
                                 model.desc = result.desc;
                                 model.url = result.url;
                                 mModels.add(model);
                             }
+
                             mHomeView.setBanner(imgUrls);
 
                         }else{

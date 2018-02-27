@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.hssy.hssy.GlideImageLoader;
+import com.hssy.hssy.LoginActivity;
 import com.hssy.hssy.R;
 import com.hssy.hssy.base.BaseActivity;
 import com.hssy.hssy.base.adapter.CommonViewPagerAdapter;
@@ -210,10 +211,13 @@ public class HomeActivity extends BaseActivity implements HomeContract.IHomeView
                            }
                            break;
                        case R.id.ll_nav_login: // 登录账号
-                           Intent intent_login = new Intent(HomeActivity.this, WebViewActivity.class);
-                           intent_login.putExtra(WebViewActivity.GANK_TITLE, "登录");
-                           intent_login.putExtra(WebViewActivity.GANK_URL, "https://github.com/login");
+                           Intent intent_login = new Intent(HomeActivity.this, LoginActivity.class);
                            startActivity(intent_login);
+
+//                           Intent intent_login = new Intent(HomeActivity.this, WebViewActivity.class);
+//                           intent_login.putExtra(WebViewActivity.GANK_TITLE, "登录");
+//                           intent_login.putExtra(WebViewActivity.GANK_URL, "https://github.com/login");
+//                           startActivity(intent_login);
                            break;
                        case R.id.ll_nav_exit:
                            finish();

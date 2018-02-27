@@ -47,40 +47,40 @@ public class NavDeedBackActivity extends BaseActivity {
     }
 
 
-    @OnClick({R.id.tv_issues, R.id.tv_other, R.id.tv_qq, R.id.tv_email, R.id.tv_blog})
+    @OnClick({R.id.tv_qq, R.id.tv_email})
     public void onClick(View view) {
         Intent intent;
         switch (view.getId()) {
-            case R.id.tv_issues:
-                intent = new Intent(this, WebViewActivity.class);
-                intent.putExtra(WebViewActivity.GANK_TITLE, "爱吖妹纸");
-                intent.putExtra(WebViewActivity.GANK_URL, "https://github.com/nanchen2251/AiYaGirl");
-                startActivity(intent);
-                break;
-            case R.id.tv_other:
-                intent = new Intent(this, WebViewActivity.class);
-                intent.putExtra(WebViewActivity.GANK_TITLE, "nanchen2251");
-                intent.putExtra(WebViewActivity.GANK_URL, "https://github.com/nanchen2251");
-                startActivity(intent);
-                break;
+//            case R.id.tv_issues:
+//                intent = new Intent(this, WebViewActivity.class);
+//                intent.putExtra(WebViewActivity.GANK_TITLE, "爱吖妹纸");
+//                intent.putExtra(WebViewActivity.GANK_URL, "https://github.com/nanchen2251/AiYaGirl");
+//                startActivity(intent);
+//                break;
+//            case R.id.tv_other:
+//                intent = new Intent(this, WebViewActivity.class);
+//                intent.putExtra(WebViewActivity.GANK_TITLE, "nanchen2251");
+//                intent.putExtra(WebViewActivity.GANK_URL, "https://github.com/nanchen2251");
+//                startActivity(intent);
+//                break;
             case R.id.tv_qq:
                 if (isQQClientAvailable()) {
-                    String url = "mqqwpa://im/chat?chat_type=wpa&uin=503233512";
+                    String url = "mqqwpa://im/chat?chat_type=wpa&uin=351616836";
                     startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
                 } else
                     Toasty.error(this, "当前设备未安装QQ").show();
                 break;
             case R.id.tv_email:
-                intent = new Intent(Intent.ACTION_SENDTO);
-                intent.setData(Uri.parse("mailto:liushilin520@foxmail.com"));
-                startActivity(intent);
+//                intent = new Intent(Intent.ACTION_SENDTO);
+//                intent.setData(Uri.parse("351616836@qq.com"));
+//                startActivity(intent);
                 break;
-            case R.id.tv_blog:
-                intent = new Intent(this, WebViewActivity.class);
-                intent.putExtra(WebViewActivity.GANK_TITLE, "博客园");
-                intent.putExtra(WebViewActivity.GANK_URL, "http://www.cnblogs.com/liushilin/");
-                startActivity(intent);
-                break;
+//            case R.id.tv_blog:
+//                intent = new Intent(this, WebViewActivity.class);
+//                intent.putExtra(WebViewActivity.GANK_TITLE, "博客园");
+//                intent.putExtra(WebViewActivity.GANK_URL, "http://www.cnblogs.com/liushilin/");
+//                startActivity(intent);
+//                break;
         }
     }
 
