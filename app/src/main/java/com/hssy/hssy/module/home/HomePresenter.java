@@ -67,16 +67,32 @@ public class HomePresenter implements HomeContract.IHomePresenter {
                         if (categoryResult != null && categoryResult.results != null
                                 && categoryResult.results.size() > 0){
                             List<String> imgUrls = new ArrayList<>();
-                            for (CategoryResult.ResultsBean result : categoryResult.results) {
-                                if (!result.url.isEmpty()){
-//                                    imgUrls.add(result.url);
-                                    imgUrls.add("http://139.196.137.31:8080/examples/hunsha/psb3.jpg");
-                                }
-                                PictureModel model = new PictureModel();
-                                model.desc = result.desc;
-                                model.url = result.url;
-                                mModels.add(model);
+//                            for (CategoryResult.ResultsBean result : categoryResult.results) {
+//                                if (!result.url.isEmpty()){
+////                                    imgUrls.add(result.url);
+//                                    imgUrls.add("http://139.196.137.31:8080/examples/hunsha/psb3.jpg");
+//                                }
+//                                PictureModel model = new PictureModel();
+//                                model.desc ="四季如春";
+////                                model.desc = result.desc;
+//                                model.url = "http://139.196.137.31:8080/examples/hunsha/psb3.jpg";
+//                                //                                model.url = result.url;
+//                                mModels.add(model);
+//                            }
+
+
+                            for(int i=1;i<=4;i++){
+                                imgUrls.add("http://139.196.137.31:8080/examples/hunsha/psb"+i+".jpg");
+                                PictureModel model_1 = new PictureModel();
+                                model_1.desc ="四季如春-"+i;
+                                model_1.url = "http://139.196.137.31:8080/examples/hunsha/psb"+i+".jpg";
+                                mModels.add(model_1);
                             }
+                            imgUrls.add("http://139.196.137.31:8080/examples/hunsha/psb"+20+".jpg");
+                            PictureModel model_1 = new PictureModel();
+                            model_1.desc ="四季如春-"+20;
+                            model_1.url = "http://139.196.137.31:8080/examples/hunsha/psb"+20+".jpg";
+                            mModels.add(model_1);
 
                             mHomeView.setBanner(imgUrls);
 

@@ -8,7 +8,7 @@
     <RelativeLayout
         android:id="@+id/nav_head_layout"
         android:layout_width="match_parent"
-        android:background="@mipmap/homepage_header"
+        android:background="@mipmap/psb"
         android:layout_height="173dp">
 
         <LinearLayout
@@ -23,13 +23,13 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/avatar"/>
+                android:src="@mipmap/ic_nav_homepage"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="@string/nanchen"
+                android:text="@string/name"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body1"
                 android:textColor="@color/white"
                 android:textSize="20sp"/>
