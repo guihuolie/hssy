@@ -1,4 +1,4 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+  // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
     
@@ -17,6 +17,7 @@ buildscript {
 
 allprojects {
     repositories {
+        mavenCentral()
         jcenter()
         //        google()
 //        google()
@@ -27,7 +28,9 @@ allprojects {
             url "http://dl.bintray.com/glomadrian/maven"
         }
     }
+
 }
+
 
 task clean(type: Delete) {
     delete rootProject.buildDir

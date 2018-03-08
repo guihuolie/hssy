@@ -32,44 +32,42 @@
             </intent-filter>
         </activity>
 
-         <!-- 主页面 -->
-         <activity
-         android:name=".module.home.HomeActivity"
-         android:launchMode="singleTop"
-         android:screenOrientation="portrait">
-         </activity>
-
+        <!-- 主页面 -->
+        <activity
+            android:name=".module.home.HomeActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"></activity>
 
         <!-- Web页 -->
         <activity
             android:name=".module.web.WebViewActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <!-- 项目主页 -->
         <activity
             android:name=".module.navhome.NavHomeActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <!-- 问题反馈 -->
         <activity
             android:name=".module.navdeedback.NavDeedBackActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <!-- 关于我们 -->
         <activity
             android:name=".module.navabout.NavAboutActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
 
         <!-- 大图页面 -->
         <activity
             android:name=".module.picture.PictureActivity"
             android:launchMode="singleTop"
-            android:screenOrientation="portrait"></activity>
-
+            android:screenOrientation="portrait" />
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>

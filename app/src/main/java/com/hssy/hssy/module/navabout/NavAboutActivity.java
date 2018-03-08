@@ -2,6 +2,7 @@ package com.hssy.hssy.module.navabout;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -17,29 +18,9 @@ import com.hssy.hssy.utils.Utils;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class NavAboutActivity extends BaseActivity {
-
-    @BindView(R.id.nav_about_toolbar)
-    Toolbar mToolbar;
-    @BindView(R.id.tv_version_name)
-    TextView mTvVersionName;
-
-    @Override
-    protected int getContentViewLayoutID() {
-        return R.layout.activity_nav_about;
-    }
+public class NavAboutActivity extends AppCompatActivity {
 
 
-    @Override
-    protected void initView(Bundle savedInstanceState) {
-        mToolbar.setNavigationOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
-        mTvVersionName.setText("当前版本 V"+ PackageUtil.getVersionName());
-    }
 
 
     @OnClick({R.id.tv_new_version, R.id.tv_function, R.id.tv_about_star, R.id.tv_gankio})
@@ -60,12 +41,6 @@ public class NavAboutActivity extends BaseActivity {
                 intent.putExtra(WebViewActivity.GANK_TITLE,"给个Star吧");
                 intent.putExtra(WebViewActivity.GANK_URL,getResources().getString(R.string.string_url_AiYaGirl));
                 startActivity(intent);
-                break;
-            case R.id.tv_gankio:
-                Intent intent1 = new Intent(this, WebViewActivity.class);
-                intent1.putExtra(WebViewActivity.GANK_TITLE,"拿着Api去玩耍");
-                intent1.putExtra(WebViewActivity.GANK_URL,getResources().getString(R.string.string_url_gankio));
-                startActivity(intent1);
                 break;
         }
     }

@@ -82,17 +82,13 @@ public class HomePresenter implements HomeContract.IHomePresenter {
 
 
                             for(int i=1;i<=4;i++){
-                                imgUrls.add("http://139.196.137.31:8080/examples/hunsha/psb"+i+".jpg");
+                                imgUrls.add("https://jsnt2018.com/img/hunsha/psb"+i+".jpg");
                                 PictureModel model_1 = new PictureModel();
                                 model_1.desc ="四季如春-"+i;
-                                model_1.url = "http://139.196.137.31:8080/examples/hunsha/psb"+i+".jpg";
+                                model_1.url = "https://jsnt2018.com/img/hunsha/psb"+i+".jpg";
                                 mModels.add(model_1);
                             }
-                            imgUrls.add("http://139.196.137.31:8080/examples/hunsha/psb"+20+".jpg");
-                            PictureModel model_1 = new PictureModel();
-                            model_1.desc ="四季如春-"+20;
-                            model_1.url = "http://139.196.137.31:8080/examples/hunsha/psb"+20+".jpg";
-                            mModels.add(model_1);
+
 
                             mHomeView.setBanner(imgUrls);
 

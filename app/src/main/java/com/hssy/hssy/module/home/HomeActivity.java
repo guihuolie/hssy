@@ -147,7 +147,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.IHomeView
         mViewPager.setAdapter(infoPagerAdapter);
         mTabLayout.setupWithViewPager(mViewPager);
         mViewPager.setCurrentItem(1);
-        mViewPager.setOffscreenPageLimit(6);
+        mViewPager.setOffscreenPageLimit(1);
 
 
         mHomePresenter.subscribe();
