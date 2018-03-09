@@ -19,6 +19,9 @@ import android.widget.TextView;
 import com.hssy.hssy.base.BaseActivity;
 import com.hssy.hssy.config.ServletUrl;
 import com.hssy.hssy.module.home.HomeActivity;
+import com.hssy.hssy.sqldatautil.DatabaseUtils;
+import com.hssy.hssy.sqldatautil.MyOpenHelper;
+import com.hssy.hssy.sqldatautil.dataModel.User;
 import com.hssy.hssy.utils.BASE64;
 import com.hssy.hssy.utils.DesUtils;
 import com.hssy.hssy.utils.EditTextClearTools;
@@ -163,6 +166,7 @@ public class RegisterActivity extends BaseActivity {
                         Bundle data = new Bundle();
                         data.putString("from","register");
                         data.putString("value",returnCode);
+
                         msg.setData(data);
                         handler.sendMessage(msg);
                     }catch (Exception e){
@@ -262,7 +266,7 @@ public class RegisterActivity extends BaseActivity {
                         Intent intent_login = new Intent(RegisterActivity.this, LoginActivity.class);
                         startActivity(intent_login);
                     }catch (Exception e){
-
+                        Log.d("1","==========");
                     }
 
                 }else if("1002".equals(val)){

@@ -21,7 +21,7 @@
 
         <!-- 闪屏页 .module.splash.SplashActivity -->
         <activity
-            android:name=".LoginActivity"
+            android:name=".MainActivity"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
             android:theme="@style/ViewBigPicTheme">
@@ -32,6 +32,17 @@
             </intent-filter>
         </activity>
 
+
+        <!-- 注册-->
+        <activity
+            android:name=".LoginActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"></activity>
+        <!-- 闪屏-->
+        <activity
+            android:name=".module.splash.SplashActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"></activity>
         <!-- 主页面 -->
         <activity
             android:name=".module.home.HomeActivity"

@@ -70,12 +70,12 @@ public class HomePresenter implements HomeContract.IHomePresenter {
 //                            for (CategoryResult.ResultsBean result : categoryResult.results) {
 //                                if (!result.url.isEmpty()){
 ////                                    imgUrls.add(result.url);
-//                                    imgUrls.add("http://139.196.137.31:8080/examples/hunsha/psb3.jpg");
+//                                    imgUrls.add("https://jsnt2018.com/examples/hunsha/psb3.jpg");
 //                                }
 //                                PictureModel model = new PictureModel();
 //                                model.desc ="四季如春";
 ////                                model.desc = result.desc;
-//                                model.url = "http://139.196.137.31:8080/examples/hunsha/psb3.jpg";
+//                                model.url = "https://jsnt2018.com/examples/hunsha/psb3.jpg";
 //                                //                                model.url = result.url;
 //                                mModels.add(model);
 //                            }

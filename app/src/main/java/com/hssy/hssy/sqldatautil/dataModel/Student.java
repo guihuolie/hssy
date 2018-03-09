@@ -1,4 +1,4 @@
-package com.hssy.hssy.sqldatautil;
+package com.hssy.hssy.sqldatautil.dataModel;
 
 /**
  * Created by chinalife on 2018/2/27.

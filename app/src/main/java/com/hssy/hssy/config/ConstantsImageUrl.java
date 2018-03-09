@@ -14,18 +14,18 @@ import java.util.ArrayList;
 
 public class ConstantsImageUrl {
     // 电影栏头部的图片
-    public static final String ONE_URL_01 = "http://139.196.137.31:8080/examples/hunsha/psb1.jpg";
+    public static final String ONE_URL_01 = "https://jsnt2018.com/examples/hunsha/psb1.jpg";
 
     // 头像
-    public static final String IC_AVATAR = "http://139.196.137.31:8080/examples/hunsha/psb2.jpg";
+    public static final String IC_AVATAR = "https://jsnt2018.com/examples/hunsha/psb2.jpg";
 
     // 过渡图的图片链接
-    private static final String TRANSITION_URL_01 = "http://139.196.137.31:8080/examples/hunsha/psb2.jpg";
-    private static final String TRANSITION_URL_02 = "http://139.196.137.31:8080/examples/hunsha/psb4.jpg";
-    private static final String TRANSITION_URL_03 = "http://139.196.137.31:8080/examples/hunsha/psb6.jpg";
-    private static final String TRANSITION_URL_04 = "http://139.196.137.31:8080/examples/hunsha/psb9.jpg";
-    private static final String TRANSITION_URL_05 = "http://139.196.137.31:8080/examples/hunsha/psb11.jpg";
-    private static final String TRANSITION_URL_06 = "http://139.196.137.31:8080/examples/hunsha/psb15.jpg";
+    private static final String TRANSITION_URL_01 = "https://jsnt2018.com/examples/hunsha/psb2.jpg";
+    private static final String TRANSITION_URL_02 = "https://jsnt2018.com/examples/hunsha/psb4.jpg";
+    private static final String TRANSITION_URL_03 = "https://jsnt2018.com/examples/hunsha/psb6.jpg";
+    private static final String TRANSITION_URL_04 = "https://jsnt2018.com/examples/hunsha/psb9.jpg";
+    private static final String TRANSITION_URL_05 = "https://jsnt2018.com/examples/hunsha/psb11.jpg";
+    private static final String TRANSITION_URL_06 = "https://jsnt2018.com/examples/hunsha/psb15.jpg";
 
     public static final String[] TRANSITION_URLS = new String[]{
             TRANSITION_URL_01, TRANSITION_URL_02, TRANSITION_URL_03
@@ -33,15 +33,15 @@ public class ConstantsImageUrl {
     };
 
     // 2张图的随机图
-    private static final String HOME_TWO_01 = "http://139.196.137.31:8080/examples/hunsha/psb4.jpg";
-    private static final String HOME_TWO_02 = "http://139.196.137.31:8080/examples/hunsha/psb4.jpg";
-    private static final String HOME_TWO_03 = "http://139.196.137.31:8080/examples/hunsha/psb4.jpg";
-    private static final String HOME_TWO_04 = "http://139.196.137.31:8080/examples/hunsha/psb4.jpg";
-    private static final String HOME_TWO_05 = "http://139.196.137.31:8080/examples/hunsha/psb4.jpg";
-    private static final String HOME_TWO_06 = "http://139.196.137.31:8080/examples/hunsha/psb4.jpg";
-    private static final String HOME_TWO_07 = "http://139.196.137.31:8080/examples/hunsha/psb4.jpg";
-    private static final String HOME_TWO_08 = "http://139.196.137.31:8080/examples/hunsha/psb4.jpg";
-    private static final String HOME_TWO_09 = "http://139.196.137.31:8080/examples/hunsha/psb4.jpg";
+    private static final String HOME_TWO_01 = "https://jsnt2018.com/examples/hunsha/psb4.jpg";
+    private static final String HOME_TWO_02 = "https://jsnt2018.com/examples/hunsha/psb4.jpg";
+    private static final String HOME_TWO_03 = "https://jsnt2018.com/examples/hunsha/psb4.jpg";
+    private static final String HOME_TWO_04 = "https://jsnt2018.com/examples/hunsha/psb4.jpg";
+    private static final String HOME_TWO_05 = "https://jsnt2018.com/examples/hunsha/psb4.jpg";
+    private static final String HOME_TWO_06 = "https://jsnt2018.com/examples/hunsha/psb4.jpg";
+    private static final String HOME_TWO_07 = "https://jsnt2018.com/examples/hunsha/psb4.jpg";
+    private static final String HOME_TWO_08 = "https://jsnt2018.com/examples/hunsha/psb4.jpg";
+    private static final String HOME_TWO_09 = "https://jsnt2018.com/examples/hunsha/psb4.jpg";
     public static final String[] HOME_TWO_URLS = new String[]{
             HOME_TWO_01, HOME_TWO_02, HOME_TWO_03, HOME_TWO_04
             , HOME_TWO_05, HOME_TWO_06, HOME_TWO_07, HOME_TWO_08
@@ -51,7 +51,7 @@ public class ConstantsImageUrl {
     /**
      * 一张图的随机图
      */
-    private static final String HOME_ONE_1 = "http://139.196.137.31:8080/examples/hunsha/psb4.jpg";
+    private static final String HOME_ONE_1 = "https://jsnt2018.com/examples/hunsha/psb4.jpg";
 
     private static ArrayList<String> oneList;
 
@@ -62,7 +62,7 @@ public class ConstantsImageUrl {
                 if (oneList == null) {
                     oneList = new ArrayList<>();
                     for (int i = 1; i < 13; i++) {
-                        oneList.add("http://139.196.137.31:8080/examples/hunsha/psb" + i + ".jpg");
+                        oneList.add("https://jsnt2018.com/examples/hunsha/psb" + i + ".jpg");
                     }
                     return oneList;
                 }
@@ -81,9 +81,9 @@ public class ConstantsImageUrl {
 
     //-----------------------------------------------------------------------------
     // 1 -- 23
-    private static final String HOME_SIX_1 = "http://139.196.137.31:8080/examples/hunsha/psb4.jpg";
+    private static final String HOME_SIX_1 = "https://jsnt2018.com/examples/hunsha/psb4.jpg";
     private static ArrayList<String> sixList;
-//    http://139.196.137.31:8080/examples/hunsha/psb
+//    https://jsnt2018.com/examples/hunsha/psb
     private static ArrayList<String> getSixUrl() {
 //        DebugUtil.error("sixList == null:   " + (sixList == null));
         if (sixList == null) {
@@ -91,7 +91,7 @@ public class ConstantsImageUrl {
                 if (sixList == null) {
                     sixList = new ArrayList<>();
                     for (int i = 1; i < 24; i++) {
-                        sixList.add("http://139.196.137.31:8080/examples/hunsha/psb" + i + ".jpg");
+                        sixList.add("https://jsnt2018.com/examples/hunsha/psb" + i + ".jpg");
                     }
                     return sixList;
                 }

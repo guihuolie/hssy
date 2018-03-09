@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.hssy.hssy.LoginActivity;
 import com.hssy.hssy.R;
 import com.hssy.hssy.base.BaseActivity;
 import com.hssy.hssy.config.ConstantsImageUrl;
@@ -76,7 +77,7 @@ public class SplashActivity extends BaseActivity {
         if (isIn) {
             return;
         }
-        Intent intent = new Intent(this, HomeActivity.class);
+        Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         overridePendingTransition(R.anim.screen_zoom_in, R.anim.screen_zoom_out);
         finish();

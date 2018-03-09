@@ -79,7 +79,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.IHomeView
 
     @Override
     protected int getContentViewLayoutID() {
-        return R.layout.activity_main;
+        return R.layout.activity_home;
     }
 
     @Override
