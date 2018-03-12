@@ -19,7 +19,7 @@
             android:id="@+id/picture_toolbar"
             android:background="@color/blue"
             app:navigationIcon="@mipmap/icon_back"
-            app:title="关于爱吖妹纸"/>
+            app:title="@string/app_name"/>
 
     </android.support.design.widget.AppBarLayout>
 

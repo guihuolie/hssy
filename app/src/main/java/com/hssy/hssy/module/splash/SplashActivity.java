@@ -79,7 +79,6 @@ public class SplashActivity extends BaseActivity {
         }
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
-        overridePendingTransition(R.anim.screen_zoom_in, R.anim.screen_zoom_out);
         finish();
         isIn = true;
     }

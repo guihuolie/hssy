@@ -6,7 +6,6 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.EditText;
 import android.widget.ImageView;
 
@@ -14,7 +13,7 @@ import com.hssy.hssy.config.ServletUrl;
 import com.hssy.hssy.module.home.HomeActivity;
 import com.hssy.hssy.sqldatautil.DatabaseUtils;
 import com.hssy.hssy.sqldatautil.MyOpenHelper;
-import com.hssy.hssy.sqldatautil.dataModel.User;
+import com.hssy.hssy.model.User;
 import com.hssy.hssy.utils.BASE64;
 import com.hssy.hssy.utils.DesUtils;
 import com.hssy.hssy.utils.EditTextClearTools;
@@ -25,7 +24,6 @@ import org.json.JSONObject;
 
 import java.net.URL;
 import java.util.List;
-import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
 

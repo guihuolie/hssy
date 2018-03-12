@@ -3,13 +3,10 @@ package com.hssy.hssy;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
-import android.text.TextUtils;
 import android.text.TextWatcher;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
@@ -18,25 +15,16 @@ import android.widget.TextView;
 
 import com.hssy.hssy.base.BaseActivity;
 import com.hssy.hssy.config.ServletUrl;
-import com.hssy.hssy.module.home.HomeActivity;
-import com.hssy.hssy.sqldatautil.DatabaseUtils;
-import com.hssy.hssy.sqldatautil.MyOpenHelper;
-import com.hssy.hssy.sqldatautil.dataModel.User;
 import com.hssy.hssy.utils.BASE64;
 import com.hssy.hssy.utils.DesUtils;
 import com.hssy.hssy.utils.EditTextClearTools;
 import com.hssy.hssy.utils.HttpUtils;
-import com.hssy.hssy.utils.PackageUtil;
 import com.hssy.hssy.utils.ToastyUtil;
 import com.hssy.hssy.utils.ValidateUtil;
 
-import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 
 import butterknife.BindView;
 

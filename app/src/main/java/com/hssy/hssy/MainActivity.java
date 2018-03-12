@@ -7,11 +7,6 @@ import android.os.Bundle;
 
 import com.hssy.hssy.module.splash.SplashActivity;
 import com.hssy.hssy.sqldatautil.DatabaseUtils;
-import com.hssy.hssy.sqldatautil.MyOpenHelper;
-import com.hssy.hssy.sqldatautil.dataModel.Student;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     //是否为第一次使用
