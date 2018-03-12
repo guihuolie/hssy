@@ -63,6 +63,9 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
 //    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.5'
 //    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+
+    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    compile 'com.tbruyelle.rxpermissions:rxpermissions:0.8.0@aar'
     implementation files('lib/BASE64Encoder.jar')
     implementation files('lib/sunjce_provider.jar')
 }

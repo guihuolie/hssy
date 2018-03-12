@@ -42,4 +42,5 @@
     <!--blog-->
     <string name="string_url_blog">http://www.cnblogs.com/liushilin/</string>
     <string name="string_url_gankio">http://gank.io/api</string>
+    <string name="url_server">https://jsnt2018.com/app/version.xml</string>
 </resources>

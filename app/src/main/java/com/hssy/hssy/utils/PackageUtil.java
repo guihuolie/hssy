@@ -26,4 +26,22 @@ public class PackageUtil {
             return "1.0";
         }
     }
+
+    /**
+     * 获取版本号
+     * @return
+     */
+    public int getVersionCode(){
+        // 获取packagemanager的实例
+        PackageManager packageManager = Utils.getContext().getPackageManager();
+        // getPackageName()是你当前类的包名，0代表是获取版本信息
+        PackageInfo packInfo = null;
+        try {
+            packInfo = packageManager.getPackageInfo(Utils.getContext().getPackageName(), 0);
+            return packInfo.versionCode;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+            return 0;
+        }
+    }
 }
