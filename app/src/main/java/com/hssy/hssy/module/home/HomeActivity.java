@@ -57,10 +57,10 @@ public class HomeActivity extends BaseActivity implements HomeContract.IHomeView
     ImageView mHeadImg;
     @BindView(R.id.main_toolbar)
     Toolbar mToolbar;
-    @BindView(R.id.main_appbar)
-    AppBarLayout mAppbar;
     @BindView(R.id.main_tab)
     DachshundTabLayout mTabLayout;
+    @BindView(R.id.main_appbar)
+    AppBarLayout mAppbar;
     @BindView(R.id.main_vp)
     ViewPager mViewPager;
     @BindView(R.id.nav_view)
@@ -91,7 +91,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.IHomeView
     @Override
     protected void initView(Bundle savedInstanceState) {
         mHomePresenter = new HomePresenter(this);
-
+        mHomePresenter.subscribe();
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) { // 4.4 以上版本
             // 设置 Toolbar 高度为 80dp，适配状态栏
             ViewGroup.LayoutParams layoutParams = mToolbar.getLayoutParams();
@@ -107,8 +107,6 @@ public class HomeActivity extends BaseActivity implements HomeContract.IHomeView
 //        params.setMargins(0,ScreenUtil.getStatusBarHeight(this),0,0);
 //        params.gravity = Gravity.CENTER_HORIZONTAL;
 //        mTabLayout.setLayoutParams(params);
-
-
 
         initDrawerLayout();
 
@@ -150,7 +148,7 @@ public class HomeActivity extends BaseActivity implements HomeContract.IHomeView
         mViewPager.setOffscreenPageLimit(1);
 
 
-        mHomePresenter.subscribe();
+
     }
 
 

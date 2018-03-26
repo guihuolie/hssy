@@ -49,6 +49,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
 
+import static com.hssy.hssy.utils.CodeUtil.DOWNLOAD_FINISH;
 import static com.hssy.hssy.utils.CodeUtil.LOGIN_ERR;
 import static com.hssy.hssy.utils.CodeUtil.LOGIN_FAIL;
 import static com.hssy.hssy.utils.CodeUtil.LOGIN_SUCESS;
@@ -71,6 +72,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         init();
+        check_app_version();
+    }
+
+
+    private void check_app_version(){
         try {
             localVersion = getVersionName();
             CheckVersionTask cv = new CheckVersionTask();
@@ -80,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
+    /***初始化登录*/
     private void init(){
         etUserName = (EditText) findViewById(R.id.et_userName);
         etUserPassword = (EditText) findViewById(R.id.et_password);
@@ -143,55 +149,13 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent_login = new Intent(LoginActivity.this, RegisterActivity.class);
         startActivity(intent_login);
         overridePendingTransition(R.anim.screen_zoom_in, R.anim.screen_zoom_out);
-//        finish();R.anim.push_left_in,R.anim.push_left_out
     }
 
 
-//    private Handler handler = new Handler(new Handler.Callback() {
-//
-//        @Override
-//        public boolean handleMessage(Message msg) {
-//            // TODO Auto-generated method stub
-//            Bundle data = msg.getData();
-//            String from = data.getString("from");
-//            if("login".equals(from)){
-//                String val = data.getString("value");
-//                if("1004".equals(val)){
-//                    ToastyUtil.showError("登录失败：用户名或密码错误！");
-//                }else if("1005".equals(val)){
-//
-//                    try{
-//                        //保存用户名
-//                        User user_1 = new User(data.getString("user_code"),data.getString("pwd"));
-//                        myOpenHelper.save(user_1);
-//                        Intent intent_login = new Intent(LoginActivity.this, HomeActivity.class);
-//                        startActivity(intent_login);
-//                        overridePendingTransition(R.anim.screen_zoom_in, R.anim.screen_zoom_out);
-//                    }catch (Exception e){
-//
-//                    }
-//
-//                }else if("1003".equals(val)){
-//                    ToastyUtil.showError("登录超时！");
-//                }
-//            }
-//            return true;
-//        }
-//    });
 
 
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == WRITE_EXTERNAL_STORAGE_REQUEST_CODE) {
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    downLoadApk();
-            } else {
-                ToastyUtil.showError("SD卡权限未获取！");
-            }
-        }
-    }
+
     private String getVersionName() throws Exception {
         //getPackageName()是你当前类的包名，0代表是获取版本信息
         PackageManager packageManager = getPackageManager();
@@ -199,6 +163,7 @@ public class LoginActivity extends AppCompatActivity {
                 0);
         return packInfo.versionName;
     }
+
     public class CheckVersionTask implements Runnable {
         InputStream is;
         public void run() {
@@ -239,15 +204,15 @@ public class LoginActivity extends AppCompatActivity {
             switch (msg.what) {
                 case CodeUtil.UPDATA_CLIENT:
                     //对话框通知用户升级程序
-                    showUpdataDialog();
+                    showUpdateDialog();
                     break;
                 case CodeUtil.GET_UNDATAINFO_ERROR:
                     //服务器超时
-                    //    Toast.makeText(getApplicationContext(), "获取服务器更新信息失败", 1).show();
+                    ToastyUtil.showError("获取服务器更新信息失败");
                     break;
                 case CodeUtil.DOWN_ERROR:
                     //下载apk失败
-                    //    Toast.makeText(getApplicationContext(), "下载新版本失败", 1).show();
+                    ToastyUtil.showError("下载新版本失败");
                     break;
                 case DOWNLOAD_FINISH:
                     installApk();
@@ -285,7 +250,7 @@ public class LoginActivity extends AppCompatActivity {
     *  3.通过builder 创建一个对话框
     *  4.对话框show()出来
     */
-    protected void showUpdataDialog() {
+    protected void showUpdateDialog() {
         AlertDialog.Builder builer = new AlertDialog.Builder(this);
         builer.setTitle("版本升级");
         builer.setMessage(info.getDescription());
@@ -297,6 +262,7 @@ public class LoginActivity extends AppCompatActivity {
                    installApk();
                    return;
                 }
+                //动态申请读写权限
                 if (ContextCompat.checkSelfPermission(LoginActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
                         != PackageManager.PERMISSION_GRANTED) {
                     //申请WRITE_EXTERNAL_STORAGE权限
@@ -316,6 +282,19 @@ public class LoginActivity extends AppCompatActivity {
         });
         AlertDialog dialog = builer.create();
         dialog.show();
+    }
+
+    /***授权许可 确认和取消 的回调*/
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == WRITE_EXTERNAL_STORAGE_REQUEST_CODE) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                downLoadApk();
+            } else {
+                ToastyUtil.showError("SD卡权限未获取！");
+            }
+        }
     }
     /*
     * 从服务器中下载APK
@@ -340,21 +319,6 @@ public class LoginActivity extends AppCompatActivity {
             }}.start();
     }
 
-//    //安装apk
-//    protected void installApk() {
-//        File file = new File(Environment.getExternalStorageDirectory(), "updata"+info.getVersion()+".apk");
-//        if(!file.exists()){
-//            return;
-//        }
-//        Intent intent = new Intent();
-//        //执行动作
-//        intent.setAction(Intent.ACTION_VIEW);
-//        //执行的数据类型
-//        intent.setDataAndType(Uri.fromFile(file), "application/vnd.android.package-archive");
-//        startActivity(intent);
-//
-//    }
-
     /**
      * 安装apk文件
      *
@@ -373,26 +337,23 @@ public class LoginActivity extends AppCompatActivity {
         } catch (IOException ignored) {
         }
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {// 6.0以上安卓版本 申请临时目录
             Uri uriForFile = FileProvider.getUriForFile(this, this.getApplicationContext().getPackageName() + ".provider", apkFile);
             intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             intent.setDataAndType(uriForFile, this.getContentResolver().getType(uriForFile));
             try {
                 this.startActivity(intent);
-            } catch (Exception var5) {
-                var5.printStackTrace();
-
+            } catch (Exception e) {
+                e.printStackTrace();
             }
         } else {
             intent.setDataAndType(Uri.fromFile(apkFile), "application/vnd.android.package-archive");
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }
-
-
     }
 
-    final int DOWNLOAD_FINISH=1110;
+
     public  void getFileFromServer(String path, ProgressDialog pd) throws Exception{
 
         //如果相等的话表示当前的sdcard挂载在手机上并且是可用的

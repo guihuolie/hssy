@@ -16,6 +16,7 @@ import android.widget.TextView;
 import com.hssy.hssy.base.BaseActivity;
 import com.hssy.hssy.config.ServletUrl;
 import com.hssy.hssy.utils.BASE64;
+import com.hssy.hssy.utils.CodeUtil;
 import com.hssy.hssy.utils.DesUtils;
 import com.hssy.hssy.utils.EditTextClearTools;
 import com.hssy.hssy.utils.HttpUtils;
@@ -27,6 +28,10 @@ import org.json.JSONObject;
 import java.net.URL;
 
 import butterknife.BindView;
+
+import static com.hssy.hssy.utils.CodeUtil.REGISTER_ERR;
+import static com.hssy.hssy.utils.CodeUtil.REGISTER_SAME_TEL;
+import static com.hssy.hssy.utils.CodeUtil.REGISTER_SUCESS;
 
 public class RegisterActivity extends BaseActivity {
     @BindView(R.id.register_toolbar)
@@ -151,11 +156,14 @@ public class RegisterActivity extends BaseActivity {
                         String returnCode=resObj.get("returnCode").toString();
 
                         Message msg = new Message();
-                        Bundle data = new Bundle();
-                        data.putString("from","register");
-                        data.putString("value",returnCode);
-
-                        msg.setData(data);
+                        msg.what = Integer.parseInt(returnCode);
+                        handler.sendMessage(msg);
+//                        Message msg = new Message();
+//                        Bundle data = new Bundle();
+//                        data.putString("from","register");
+//                        data.putString("value",returnCode);
+//
+//                        msg.setData(data);
                         handler.sendMessage(msg);
                     }catch (Exception e){
                         System.out.print("e=="+e);
@@ -241,29 +249,26 @@ public class RegisterActivity extends BaseActivity {
         @Override
         public boolean handleMessage(Message msg) {
             // TODO Auto-generated method stub
-            Bundle data = msg.getData();
-            String from = data.getString("from");
-            if("register".equals(from)){
-                String val = data.getString("value");
-                if("1000".equals(val)){
+            switch (msg.what){
+                case REGISTER_ERR:
                     ToastyUtil.showError("注册失败：请稍后再试！");
-                }else if("1001".equals(val)){
+                    break;
+                case REGISTER_SUCESS:
                     ToastyUtil.showSuccess("注册成功：账号为手机号");
                     try{
-
                         Intent intent_login = new Intent(RegisterActivity.this, LoginActivity.class);
                         startActivity(intent_login);
                     }catch (Exception e){
                         Log.d("1","==========");
                     }
-
-                }else if("1002".equals(val)){
+                    break;
+                case REGISTER_SAME_TEL:
                     ToastyUtil.showError("注册失败：手机号已注册！");
-                }
+                    break;
             }
+
             return true;
         }
     });
-
 
 }

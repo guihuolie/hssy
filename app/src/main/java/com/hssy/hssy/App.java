@@ -5,6 +5,7 @@ import android.app.Application;
 
 
 import com.hssy.hssy.utils.Utils;
+import com.squareup.leakcanary.LeakCanary;
 //import com.squareup.leakcanary.LeakCanary;
 import java.util.HashSet;
 import java.util.Set;
@@ -31,12 +32,12 @@ public class App extends Application {
         INSTANCE = this;
 
         // 初始化 LeakCanarysss
-//        if (LeakCanary.isInAnalyzerProcess(this)) {
-//            // This process is dedicated to LeakCanary for heap analysis.
-//            // You should not init your app in this process.
-//            return;
-//        }
-//        LeakCanary.install(this);
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(this);
 
         BGASwipeBackManager.getInstance().init(this);
         ConfigManage.INSTANCE.initConfig(this);
